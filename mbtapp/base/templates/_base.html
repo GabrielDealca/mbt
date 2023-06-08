@@ -1,0 +1,28 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{% block title %}{% endblock %}</title>
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <link rel="stylesheet" href="{% static '/bootstrap/css/bootstrap.min.css' %}">    
+
+
+    <style>
+        
+    </style>
+    {% block head %}
+    {% endblock %}
+</head>
+<body class="text-dark bg-light"> 
+    {% include '_navbar.html' %}
+    {% block content %}
+    {% endblock %}       
+    
+    {% block scripts %}
+    <script src="{% static '/bootstrap/js/bootstrap.min.js' %}"></script>
+    
+    {% endblock %}
+</body>
+</html>

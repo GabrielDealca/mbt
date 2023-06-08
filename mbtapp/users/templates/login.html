@@ -1,0 +1,44 @@
+{% extends '_base.html' %}
+{% load static %}
+{% load crispy_forms_tags %}
+
+
+{% block title %} 
+Login
+{% endblock %}
+
+{% block head %}
+{% endblock %}
+
+{% block content %} 
+<section class="mt-5">
+    <div class="container">
+        <div class="row">
+            <div class="col-auto mx-auto">
+                <div class="card">
+                    <div class="card-body p-5">
+                        <form method="post" action="{% url 'users:login' %}">
+                            {% include '_messages.html' %}
+                    
+                            {% csrf_token %} 
+                            <div class="form-floating mb-3">  
+                                <input id="login-email" class="form-control" type="text" name="credential" placeholder="sample@email.com" required>
+                                <label for="login-email" class="text-dark">Email or Username</label>
+                            </div>                
+                            <div class="form-floating mb-3">                
+                                <input id="login-password" class="form-control" type="password" name="password" placeholder="Password" required autocomplete="off">
+                                <label for="login-password" class="text-dark">Password</label>
+                            </div>        
+                            <div class="form-group py-2"><button class="btn btn-block" style="display: block; width: 100%; background-color:rgb(188,65,124);"  type="submit">Log In</button></div>
+                            <small class="text-light">Don't have an account yet? <span class="text-info"><a type="button" class="text-info" href="{% url 'users:signup' %}">Sign-up here.</a> </span></small>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% block scripts %}
+
+{% endblock %}
+{% endblock %}

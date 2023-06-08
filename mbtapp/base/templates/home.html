@@ -1,0 +1,76 @@
+{% extends '_base.html' %}
+{% load static %}
+
+{% block title %} 
+Home
+{% endblock %}
+
+{% block head %}
+{% endblock %}
+
+{% block content %}
+<section class="mt-5">    
+    <div class="container">
+        <div class="row text-dark justify-content-center mb-5">
+            <div class="col-auto justify-content-center align-items-center p-3" style="border: 1px solid black;">                
+                <h3>{{ user.username }}</h3>
+               
+            </div>
+            <div class="col-auto d-flex justify-content-center align-items-center p-3" style="border: 1px solid black;">
+                {% for user_perm in User_Permissions %}
+                    <button class="btn btn-sm mx-1" disabled>{{ user_perm.name }}</button>
+                {% empty %}
+                No permissions assigned.
+                {% endfor %}
+            </div>
+        </div>         
+        
+        
+        <table class="table table-dark mx-auto w-auto">
+            <tr class="text-center">
+                <th>Roles</th>
+                <th>Permissions</th>
+            </tr>
+            {% for role in Roles %}  
+            <tr class="text-center">
+                <td class="p-3 align-middle">
+                {{ role.name }}  
+                </td>
+                
+                <td class="p-3">
+                    <table>
+                        {% for permission in role.permissions %}
+                        <tr>
+                            <td class="text-center">
+                                <button class="btn btn-sm mx-1" disabled>
+                                    {{ permission }}
+                                </button>
+                            </td>
+                        </tr>
+                        {% empty %}
+                        <tr>
+                            <td class="text-center">
+                                No permissions assigned. 
+                            </td>
+                        </tr>                       
+                        {% endfor %}    
+                    </table>
+                </td>
+                
+            </tr>
+            {% empty %}
+            <tr style="border: 1px solid black;" class="text-center">
+                <td class="p-3" style="border: 1px solid black;" >
+                     No roles set.
+                </td>
+                <td></td>
+            {% endfor %}      
+        </table>
+    
+                                      
+                
+            
+        
+    </div>
+</section>
+{% endblock %}
