@@ -14,11 +14,11 @@
 | POST | /api/login      |  User login     | http://127.0.0.1:8000/api/login/
 | POST | /api/permissions      |  creating new permissions     | http://127.0.0.1:8000/api/permissions/
 | POST | /api/roles      |  creating new roles     | http://127.0.0.1:8000/api/roles/
-| POST | /api/roles/<str:role_id>/permissions      |  assigning role permission     | http://127.0.0.1:8000/api/roles/<str:role_id>/permissions/
-| GET | /api/roles/<str:role_id>/permissions      |  showing available role permissions     | http://127.0.0.1:8000/api/roles/<str:role_id>/permissions/
-| POST | /api/users/<str:user_id>/roles      |  assigning list of roles to user     | http://127.0.0.1:8000/api/users/<str:user_id>/roles/
-| GET | /api/users/<str:user_id>/roles      |  showing roles of user     | http://127.0.0.1:8000/api/users/<str:user_id>/roles/
-| GET | /api/users/<str:user_id>/permissions      |  showing user permissions     | http://127.0.0.1:8000/api/users/<str:user_id>/permissions/
+| POST | /api/roles/<str:role_id>/permissions      |  assigning role permission     | http://127.0.0.1:8000/api/roles/staff/permissions/
+| GET | /api/roles/<str:role_id>/permissions      |  showing available role permissions     | http://127.0.0.1:8000/api/roles/staff/permissions/
+| POST | /api/users/<str:user_id>/roles      |  assigning list of roles to user     | http://127.0.0.1:8000/api/users/710cbb6447a94bfd9e5f17e419c199ad/roles/
+| GET | /api/users/<str:user_id>/roles      |  showing roles of user     | http://127.0.0.1:8000/api/users/710cbb6447a94bfd9e5f17e419c199ad/roles/
+| GET | /api/users/<str:user_id>/permissions      |  showing user permissions     | http://127.0.0.1:8000/api/users/710cbb6447a94bfd9e5f17e419c199ad/permissions/
 
 
 ## Setup MySQL
